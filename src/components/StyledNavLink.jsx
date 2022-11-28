@@ -25,7 +25,7 @@ const StyledNavLink = ({ children, to, styleType = "default", className }) => {
                 )
             }
             to={to}
-            exact
+
         >
             {children}
         </NavLink>

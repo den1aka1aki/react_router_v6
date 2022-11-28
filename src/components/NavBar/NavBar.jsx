@@ -25,7 +25,7 @@ const NavBar = () => {
                         <NavBarDropdown />
                     </>
                 ) : (
-                    <StyledNavLink to='/auth' styleType='button'>
+                    <StyledNavLink to='/auth/signup' styleType='button'>
                         SignUp
                     </StyledNavLink>
                 )}
