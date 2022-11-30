@@ -15,6 +15,7 @@ import SpinLoading from "../components/SpinLoader";
 import StyledNavLink from "../components/StyledNavLink";
 //Icons
 import { UserIcon, KeyIcon, MailIcon } from "@heroicons/react/outline";
+import {useNavigate} from "react-router-dom";
 
 const signUpSchema = Yup.object({
     username: Yup.string()
@@ -36,7 +37,7 @@ const SignUpPage = () => {
     const [loading, setLoading] = useState(false);
     const [successful, setSuccessful] = useState(false);
     const { message } = useSelector((state) => state.message);
-    // const history = useHistory();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -51,7 +52,7 @@ const SignUpPage = () => {
             .unwrap()
             .then(() => {
                 setSuccessful(true);
-                // history.push("/");
+                navigate("/posts");
             })
             .catch(() => {
                 setSuccessful(false);

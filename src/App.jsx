@@ -13,6 +13,7 @@ import PostPage from "./pages/Posts/PostPage";
 import PostsListPage from "./pages/Posts/PostsListPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SigupPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
     return (
@@ -26,10 +27,14 @@ function App() {
                     <Route path="signup" element = {<SignUpPage/>} />
                     <Route path="*" element={<Navigate to="/auth/signup"/>}/>
                 </Route>
-                <Route path='posts' element={<PostsLayout/>} >
+                <Route path='posts' element={
+                    <ProtectedRoute redirectTo ={"/auth/login"}>
+                        <PostsLayout/>
+                    </ProtectedRoute>}>
                     <Route index element = {<PostsListPage/>} />
                     <Route path = ":postId" element = {<PostPage/>} />
                 </Route>
+
                 <Route path="*" element={<Navigate to="/posts"/>}/>
             </Routes>
 
