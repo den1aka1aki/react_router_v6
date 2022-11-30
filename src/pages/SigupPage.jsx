@@ -116,7 +116,7 @@ const SignUpPage = () => {
             </FormikProvider>
             <p className='text-slate-600 text-sm'>
                 <span> Already have account? </span>
-                <StyledNavLink styleType='underline' to='/auth/login'>
+                <StyledNavLink styleType='underline' to={'/auth/login'}>
                     Log In
                 </StyledNavLink>
             </p>

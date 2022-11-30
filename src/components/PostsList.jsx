@@ -46,7 +46,7 @@ const PostListItem = ({ item }) => {
                 </dl>
             </div>
             <NavLink
-                to={`/posts/${postId}`}
+                to={postId}
                 className='flex items-center text-sm text-sky-500 font-medium'
             >
                 <span className='absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl'></span>
